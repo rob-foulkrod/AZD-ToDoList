@@ -17,6 +17,8 @@ description: A complete ToDo app with front-end in Razor pages hosted in App Ser
 
 # ToDo List - Razor Web Page + Azure Functions + Storage Tables
 
+💪 This template scenario is part of the larger **[Microsoft Trainer Demo Deploy Catalog](https://aka.ms/trainer-demo-deploy)**.
+
 A C# todo list app that showcases **Azure Developer CLI (azd)** end-to-end:
 
 | Layer | Tech | Azure Service |
@@ -33,7 +35,7 @@ A C# todo list app that showcases **Azure Developer CLI (azd)** end-to-end:
 | Tool | Install |
 |---|---|
 | Azure Developer CLI | `winget install Microsoft.Azd` |
-| .NET 8 SDK | https://dot.net |
+| .NET 10 SDK | [https://dotnet.microsoft.com/download/dotnet/10.0](https://dotnet.microsoft.com/download/dotnet/10.0) |
 | Azure Functions Core Tools v4 | `npm i -g azure-functions-core-tools@4` |
 | Azurite (local storage emulator) | `npm i -g azurite` |
 | Azure subscription | https://azure.com/free |

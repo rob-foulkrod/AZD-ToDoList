@@ -1,6 +1,10 @@
-name: azd-demo
+
+name: tdd-azd-todolist
 metadata:
-  template: azd-init
+  template: tdd-azd-todolist@1.0.0
+
+infra:
+  provider: "bicep"
 
 services:
   web:

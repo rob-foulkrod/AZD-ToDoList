@@ -9,7 +9,7 @@ param environmentName string
 @description('Primary Azure region for all resources.')
 param location string
 
-var tags = { 'azd-env-name': environmentName }
+var tags = { 'azd-env-name': environmentName, SecurityControl: 'Ignore' }
 var resourceSuffix = take(uniqueString(subscription().id, environmentName, location), 6)
 
 // ---------------------------------------------------------------------------
