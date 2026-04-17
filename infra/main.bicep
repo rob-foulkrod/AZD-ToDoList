@@ -71,7 +71,8 @@ module api './core/host/function.bicep' = {
   scope: rg
   params: {
     location: location
-    tags: union(tags, { 'azd-service-name': 'api' })
+    tags: tags
+    serviceName: 'api'
     name: 'func-taskdemo-${resourceSuffix}'
     storageAccountName: storage.outputs.name
     tableServiceUri: storage.outputs.tableServiceUri
@@ -87,7 +88,8 @@ module web './core/host/appservice.bicep' = {
   scope: rg
   params: {
     location: location
-    tags: union(tags, { 'azd-service-name': 'web' })
+    tags: tags
+    serviceName: 'web'
     name: 'app-taskdemo-${resourceSuffix}'
     apiUrl: api.outputs.functionAppUrl
     applicationInsightsConnectionString: monitoring.outputs.applicationInsightsConnectionString

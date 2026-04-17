@@ -1,6 +1,7 @@
 param location string
 param tags object
 param name string
+param serviceName string
 
 @description('Base URL of the Azure Functions API (e.g. https://func-xxx.azurewebsites.net)')
 param apiUrl string
@@ -25,7 +26,7 @@ resource appServicePlan 'Microsoft.Web/serverfarms@2023-01-01' = {
 resource appService 'Microsoft.Web/sites@2023-01-01' = {
   name: name
   location: location
-  tags: tags
+  tags: union(tags, { 'azd-service-name': serviceName })
   kind: 'app,linux'
   identity: {
     type: 'SystemAssigned'

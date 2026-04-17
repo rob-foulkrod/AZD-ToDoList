@@ -1,6 +1,7 @@
 param location string
 param tags object
 param name string
+param serviceName string
 
 param storageAccountName string
 param tableServiceUri string
@@ -24,7 +25,7 @@ resource functionPlan 'Microsoft.Web/serverfarms@2023-01-01' = {
 resource functionApp 'Microsoft.Web/sites@2023-01-01' = {
   name: name
   location: location
-  tags: tags
+  tags: union(tags, { 'azd-service-name': serviceName })
   kind: 'functionapp'
   identity: {
     type: 'SystemAssigned'
